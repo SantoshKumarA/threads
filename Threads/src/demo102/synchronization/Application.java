@@ -12,6 +12,7 @@ public class Application {
 	}
 
 	public synchronized void incrementCount() {
+//	public void incrementCount() {
 		count++;
 	}
 

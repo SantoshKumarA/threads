@@ -11,42 +11,8 @@ public class Worker {
 	private Object lock1 = new Object();
 	private Object lock2 = new Object();
 
-	private List<Integer> list1 = new ArrayList<>();
-	private List<Integer> list2 = new ArrayList<>();
-
-	public void main() {
-
-		Thread t1 = new Thread(new Runnable() {
-			public void run() {
-				process();
-			}
-		});
-
-		long start = System.currentTimeMillis();
-
-		Thread t2 = new Thread(new Runnable() {
-			public void run() {
-				process();
-			}
-		});
-
-		t1.start();
-		t2.start();
-
-		try {
-			t1.join();
-			t2.join();
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
-
-		long end = System.currentTimeMillis();
-
-		System.out.println("Time taken : " + (end - start));
-
-		System.out.println("list1 size : " + list1.size() + ", list2 size: " + list2.size());
-
-	}
+	public List<Integer> list1 = new ArrayList<>();
+	public List<Integer> list2 = new ArrayList<>();
 
 	public void process() {
 		for (int i = 0; i < 1000; i++) {
@@ -56,6 +22,7 @@ public class Worker {
 	}
 
 	public synchronized void stepOne() {
+//		synchronized (this) {
 		synchronized (lock1) {
 			try {
 				Thread.sleep(1);
@@ -68,6 +35,7 @@ public class Worker {
 	}
 
 	public void stepTwo() {
+//		synchronized (this) {
 		synchronized (lock2) {
 
 			try {

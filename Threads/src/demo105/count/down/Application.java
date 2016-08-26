@@ -10,40 +10,22 @@ public class Application {
 		CountDownLatch countDownLatch = new CountDownLatch(5);
 
 		ExecutorService executorService = Executors.newFixedThreadPool(3);
-		
+
+		// change the limit to 15 and run
 		for (int i = 0; i < 5; i++) {
-			executorService.submit(new Processor(countDownLatch));
+			executorService.submit(new ProcessorThread(countDownLatch));
 		}
-		
+
 		executorService.shutdown();
-		
+
+		System.out.println(countDownLatch.getCount());
 		try {
+			// no thread can cross this until it becomes zero.
 			countDownLatch.await();
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
-		
-		System.out.println("Completed..");
-	}
-}
 
-class Processor extends Thread {
-	private CountDownLatch countDownLatch;
-
-	public Processor(CountDownLatch countDownLatch) {
-		this.countDownLatch = countDownLatch;
-	}
-
-	public void run() {
-
-		System.out.println("Thread started.. ");
-
-		try {
-			Thread.sleep(3000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
-
-		this.countDownLatch.countDown();
+		System.out.println("Completed main thread execution..");
 	}
 }

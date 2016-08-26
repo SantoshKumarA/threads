@@ -5,7 +5,8 @@ import java.util.Scanner;
 public class Application {
 
 	public static void main(String[] args) {
-		Processor processor = new Processor();
+		
+		ProcessorThread processor = new ProcessorThread();
 		
 		processor.start();
 		
@@ -13,32 +14,9 @@ public class Application {
 		
 		Scanner scanner = new Scanner(System.in);
 		scanner.nextLine();
-		
 		scanner.close();
 		
 		processor.shutDown();
-		
 	}
 	
-}
-
-class Processor extends Thread {
-	
-	private volatile boolean flag = true;
-	
-	public void run() {
-		while (flag) {
-			System.out.println("Welcome");
-			
-			try {
-				Thread.sleep(100);
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}
-		}
-	}
-	
-	public void shutDown() {
-		flag = false;
-	}
 }
