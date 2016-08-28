@@ -43,7 +43,7 @@ Interrupting thread:
 2. OR use interrupt method and check for the flag..
  
 CountDownLatch:
+
 1. https://docs.oracle.com/javase/7/docs/api/java/util/concurrent/CountDownLatch.html
 2. Ensures the current runnging thread to wait until the latch counts down to ZERO.
-3. 
 
