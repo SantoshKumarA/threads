@@ -30,6 +30,7 @@ Semaphore:
 2. Seamphore(1) acts like lock / unlock
 3. acquire and release can be from different threads - not like other locking mechanisms (lock / unlock should be from same thread).
 4. to control accessing some resources..
+5. https://docs.oracle.com/javase/7/docs/api/java/util/concurrent/Semaphore.html
 
 Callable and Future:
 
@@ -40,3 +41,9 @@ Interrupting thread:
 
 1. best way to interrupt is to have volatile boolean value
 2. OR use interrupt method and check for the flag..
+ 
+CountDownLatch:
+1. https://docs.oracle.com/javase/7/docs/api/java/util/concurrent/CountDownLatch.html
+2. Ensures the current runnging thread to wait until the latch counts down to ZERO.
+3. 
+
