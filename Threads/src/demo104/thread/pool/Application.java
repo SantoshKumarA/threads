@@ -20,7 +20,7 @@ public class Application {
 		System.out.println("All the tasks as submitted..");
 
 		try {
-			executorService.awaitTermination(1, TimeUnit.SECONDS);
+			executorService.awaitTermination(1, TimeUnit.MINUTES);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}

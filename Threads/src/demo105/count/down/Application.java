@@ -12,7 +12,7 @@ public class Application {
 		ExecutorService executorService = Executors.newFixedThreadPool(3);
 
 		// change the limit to 15 and run
-		for (int i = 0; i < 5; i++) {
+		for (int i = 0; i < 15; i++) {
 			executorService.submit(new ProcessorThread(countDownLatch));
 		}
 

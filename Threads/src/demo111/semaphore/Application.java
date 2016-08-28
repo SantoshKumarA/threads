@@ -8,18 +8,18 @@ import java.util.concurrent.TimeUnit;
 public class Application {
 
 	public static void main(String[] args) throws InterruptedException {
-		 playAround();
+//		 playAround();
 
-//		playSemaphore();
+		playSemaphore();
 
 	}
 
 	private static void playAround() throws InterruptedException {
 		// maintains the count..
-		Semaphore semaphore = new Semaphore(1);
+		Semaphore semaphore = new Semaphore(0);
 
-		semaphore.acquire();
-		// semaphore.release();
+//		semaphore.acquire();
+//		semaphore.release();
 		semaphore.tryAcquire(3, TimeUnit.SECONDS);
 
 		System.out.println("Available permits: " + semaphore.availablePermits());

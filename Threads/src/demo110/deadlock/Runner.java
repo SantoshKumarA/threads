@@ -44,9 +44,9 @@ public class Runner {
 	public void firstThread() throws InterruptedException {
 		Random random = new Random();
 
-//		acquireLocks(lock1, lock2);
-		lock1.lock();
-		lock2.lock();
+		acquireLocks(lock1, lock2);
+		/*lock1.lock();
+		lock2.lock();*/
 		
 		try {
 			for (int i = 0; i < 10000; i++) {
@@ -61,9 +61,9 @@ public class Runner {
 	public void secondThread() throws InterruptedException {
 		Random random = new Random();
 
-//		acquireLocks(lock2, lock1);
-		lock2.lock();
-		lock1.lock();
+		acquireLocks(lock2, lock1);
+		/*lock2.lock();
+		lock1.lock();*/
 		
 		try {
 			for (int i = 0; i < 10000; i++) {

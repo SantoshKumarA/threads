@@ -13,7 +13,7 @@ public class Application {
 
 	public synchronized void incrementCount() {
 //	public void incrementCount() {
-		count++;
+		count++; // count = count + 1
 	}
 
 	public void doWork() {

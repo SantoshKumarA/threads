@@ -22,8 +22,8 @@ public class Worker {
 	}
 
 	public synchronized void stepOne() {
-//		synchronized (this) {
-		synchronized (lock1) {
+		synchronized (this) {
+//		synchronized (lock1) {
 			try {
 				Thread.sleep(1);
 			} catch (InterruptedException e) {
@@ -35,8 +35,8 @@ public class Worker {
 	}
 
 	public void stepTwo() {
-//		synchronized (this) {
-		synchronized (lock2) {
+		synchronized (this) {
+//		synchronized (lock2) {
 
 			try {
 				Thread.sleep(1);

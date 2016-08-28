@@ -14,17 +14,17 @@ public class Application {
 				
 				for ( int i = 0; i < 1E8; i++) {
 					
-					/*if (Thread.currentThread().isInterrupted()) {
+					if (Thread.currentThread().isInterrupted()) {
 						System.out.println("Interrupted at " + i);
 						break;
-					}*/
+					}
 					
-					try {
+					/*try {
 						Thread.sleep(1);
 					} catch (InterruptedException e) {
 						System.out.println("Interrupted at " + i);
 						break;
-					}
+					}*/
 					
 					Math.sin(random.nextDouble());
 				}
